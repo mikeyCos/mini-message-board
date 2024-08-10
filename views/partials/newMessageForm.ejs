@@ -1,18 +1,18 @@
-<form method="POST" action="/new">
+<form  method="POST" action="/new" class="new-message-form">
   <ul>
     <li class="form-item">
       <label for="user">Username:</label>
-      <input name="user" id="user" type="text" value="Anonymous" placeholder="Anonymous">
+      <input name="user" id="user" type="text" value="Anonymous" placeholder="Anonymous" required>
     </li>
 
     <li class="form-item">
       <label for="message">Message:</label>
-      <textarea name="message" id="message" placeholder="Enter message here..."></textarea>
+      <textarea name="message" id="message" placeholder="Enter message here..." required></textarea>
     </li>
   </ul>
 
   <div class="btn-container">
     <button type="submit">Add message</button>
-    <button type="button">Reset</button>
+    <button type="button" onclick="<%= clickHandler %>">Reset</button>
   </div>
 </form>

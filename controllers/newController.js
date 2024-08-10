@@ -5,12 +5,22 @@ const newController = {
   getRoot: asyncHandler((req, res) => {
     console.log("newController");
     console.log(`req.url: ${req.url}`);
-    res.render("new");
+    // I do not like this >:(
+    res.render("new", {
+      clickHandler: "resetForm()",
+      title: "New",
+    });
+
+    // res.render("new", {
+    //   clickHandler: `(function resetForm() {
+    //     console.log(this);
+    //   })()`,
+    // });
   }),
   postMessage: asyncHandler((req, res) => {
-    console.log("req.body:", req.body);
     const { message, user } = req.body;
     messages.push({ text: message, user, added: new Date() });
+    res.redirect("/messages");
   }),
 };
 
