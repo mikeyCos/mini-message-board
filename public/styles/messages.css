@@ -1,3 +1,31 @@
-body {
-  background-color: lightcoral;
+.message {
+  position: relative;
+  text-wrap: pretty;
+  padding: 0.5rem;
+}
+
+.message:nth-child(even) {
+  /* background-color: var(--bkg-color-tertiary); */
+  background-color: rgb(from var(--bkg-color-tertiary) r g b / 0.25);
+}
+
+.message:not(:last-child)::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.message-info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  column-gap: 1rem;
+  font-size: clamp(0.5rem, 15vw, 1rem);
 }

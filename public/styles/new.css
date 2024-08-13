@@ -1,0 +1,43 @@
+.new-message-form {
+  padding: 1rem;
+}
+
+.new-message-form ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.new-message-form textarea,
+.new-message-form input {
+  width: 100%;
+}
+
+.new-message-form .btn-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.new-message-form .btn-container button {
+  padding: 0.5rem;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item label {
+  flex: 1;
+}
+
+@media screen and (min-width: 481px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1025px) {
+}

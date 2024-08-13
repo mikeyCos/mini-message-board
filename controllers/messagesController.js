@@ -15,9 +15,11 @@ const messages = [
 
 const messagesController = {
   getAllMessages: asyncHandler((req, res) => {
+    console.log("messageController...");
     res.render("messages", {
       messages,
       title: "Messages",
+      clickHandler: "messageDetails",
     });
   }),
 };

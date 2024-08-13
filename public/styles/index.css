@@ -1,0 +1,50 @@
+@font-face {
+  font-family: DM Sans;
+  src: url("../assets/fonts/DM_Sans,Open_Sans/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: Roboto Condensed;
+  src: url("../assets/fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+:root {
+  --font-family-primary: DM Sans, sans-serif;
+  --font-family-secondary: Roboto Condensed, Arial, sans-serif;
+  --font-color-primary: #222222;
+  --bkg-color-primary: #e6ecf1;
+  --bkg-color-secondary: #84dcc6;
+  --bkg-color-tertiary: #95a3b3;
+  --desktop-max-width: 1024px;
+  /* 
+  #4B4E6D
+  #FFFFFF
+  */
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  grid-auto-rows: min-content 1fr min-content;
+  font-family: var(--font-family-primary);
+}
+
+main {
+  background-color: var(--bkg-color-primary);
+  color: var(--font-color-primary);
+  padding: 1rem;
+}
+
+.icon {
+  width: 2.5rem;
+  height: auto;
+}
+
+@media screen and (min-width: 1025px) {
+  main section {
+    max-width: var(--desktop-max-width);
+    margin: auto;
+  }
+}

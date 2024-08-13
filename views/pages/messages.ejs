@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="./messages.css">
+<link rel="stylesheet" href="./styles/messages.css">
+<script type="text/javascript" src="/messageDetails.js"></script>
 <%- include('../partials/head') %>
 
 <body>
   <%- include('../partials/header'); %>
   <main>
-    <h1>Messages</h1>
+    <section id="messages">
+      <h1>Messages</h1>
     
-    <% if (messages.length > 0 ) { %>
-      <ul>
-        <% messages.forEach((message) => { %>
-          <%- include('../partials/message', { ...message }) %>
-        <% }); %>
-      </ul>
-    <% } else { %>
-      <p>There are no messages.</p>
-    <% } %>
+      <% if (messages.length > 0 ) { %>
+        <ul>
+          <% messages.forEach((message) => { %>
+            <%- include('../partials/message', { ...message }) %>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>There are no messages.</p>
+      <% } %>
+    </section>
     
     
   </main>

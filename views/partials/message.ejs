@@ -3,11 +3,24 @@
     <%= text %>
   </p>
 
-  <p class="message-user">
-    <%= user %>
-  </p>
-  
-  <p class="message-date">
-    <%= added %>
-  </p>
+
+  <div class="message-info">
+    <p class="message-user">
+      <%= user %>
+    </p>
+    
+    <p class="message-date">
+      <%= added %>
+    </p>
+  </div>
+
+  <div class="message-controls">
+    <button type="button" onclick="<%= clickHandler %>({ text: '<%= text %>', user: '<%= user %>', added: '<%= added %>'})"><img src="./assets/icons/open_in_full.svg" alt="#" onload="SVGInject(this)"></button>
+
+    <% /* %>
+    <button onclick="window.location = '/</<%= text %>'">Foo</button>
+    <button onclick="((msg) => console.log(JSON.parse(msg)))('<%= JSON.stringify(message) %>')">Lorem</button>
+    <button onclick="<%= clickHandler %>">Bar</button>
+    <% */ %>
+  </div>
 </li>

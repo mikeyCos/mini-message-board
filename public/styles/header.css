@@ -1,19 +1,78 @@
+header {
+  padding: 1rem;
+  background-color: var(--bkg-color-secondary);
+  box-shadow: 0 0 4px black;
+}
+
 .nav-main {
   display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
 }
 
 .nav-main ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-main a {
   text-decoration: none;
   color: inherit;
+  font-family: var(--font-family-secondary);
+  position: relative;
+}
+
+.nav-right a:hover {
+}
+
+.nav-right a:not(:last-child)::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+
+.nav-left .logo {
+  width: clamp(5rem, 15vw, 7rem);
+  height: auto;
+}
+
+.nav-left a {
+  position: relative;
+}
+
+.nav-left h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .nav-right {
   gap: 1rem;
+  align-items: center;
+}
+
+.nav-right a {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media screen and (min-width: 481px) {
+  .nav-main {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1025px) {
+  .nav-main {
+    max-width: var(--desktop-max-width);
+    margin: auto;
+  }
 }

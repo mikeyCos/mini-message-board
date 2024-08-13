@@ -1,5 +1,20 @@
 # Changelog
 ---
+### 13 AUG 2024
+- 
+---
+### 12 AUG 2024
+- Created `messageDetails` module; currently, only logs a message object.
+- Saved `open_in_full.svg` in `/assets/icons` subdirectory. 
+- The `header` component is now responsive.
+- Added 'common' breakpoints for responsive design support.
+---
+### 10 AUG 2024
+- Saved fonts `DM Sans` and `Roboto Condensed` in `fonts` subdirectory.
+- Added a logo SVG to the `header` component.
+- Created stylesheet for the `footer` component.
+- Created a `paths` subdirectory and module.
+---
 ### 9 AUG 2024
 - Submitting a new message will redirect the client to the `messages` page.
 - Divided message content in `message` template into three paragraph elements.

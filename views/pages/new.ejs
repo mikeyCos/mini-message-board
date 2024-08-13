@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="./new.css">
+  <link rel="stylesheet" href="./styles/new.css">
   <script type="text/javascript" src="/resetForm.js"></script>
   <%- include('../partials/head') %>
 
   <body>
     <%- include('../partials/header'); %>
     <main>
-      <h1>New</h1>
-      <%- include('../partials/newMessageForm'); %>
+      <section id="new">
+        <h1>New Message</h1>
+        <%- include('../partials/newMessageForm'); %>
+      </section>
     </main>
     <%- include('../partials/footer'); %>
   </body>

@@ -2,12 +2,12 @@
   <ul>
     <li class="form-item">
       <label for="user">Username:</label>
-      <input name="user" id="user" type="text" value="Anonymous" placeholder="Anonymous" required>
+      <input name="user" id="user" type="text" value="Anonymous" placeholder="Anonymous" pattern="^[a-zA-z]{2,}$" required>
     </li>
 
     <li class="form-item">
       <label for="message">Message:</label>
-      <textarea name="message" id="message" placeholder="Enter message here..." required></textarea>
+      <textarea name="message" id="message" placeholder="Enter message here... (Do not exceed 250 characters)" minlength="2" maxlength="250" required></textarea>
     </li>
   </ul>
 
