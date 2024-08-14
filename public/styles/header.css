@@ -37,7 +37,8 @@ header {
 }
 
 .nav-left .logo {
-  width: clamp(5rem, 15vw, 7rem);
+  /* width: clamp(5rem, 20vw, 7rem); */
+  width: 7rem;
   height: auto;
 }
 
@@ -46,9 +47,15 @@ header {
 }
 
 .nav-left h1 {
-  position: absolute;
   top: 0;
   left: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.nav-left a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-right {
@@ -64,6 +71,12 @@ header {
   .nav-main {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .nav-left h1 {
+    position: absolute;
+    top: -25%;
+    left: 50%;
   }
 }
 

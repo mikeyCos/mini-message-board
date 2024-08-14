@@ -18,8 +18,8 @@ const newController = {
     // });
   }),
   postMessage: asyncHandler((req, res) => {
-    const { message, user } = req.body;
-    messages.push({ text: message, user, added: new Date() });
+    const { title, body, user } = req.body;
+    messages.push({ title, body, user, timestamp: new Date() });
     res.redirect("/messages");
   }),
 };

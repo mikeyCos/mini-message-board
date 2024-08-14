@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", homeRouter);
 app.use("/new", newRouter);
 app.use("/messages", messagesRouter);
+// app.use("/message", messageRouter);
 
 app.use((req, res) => {
   console.log("404 page rendering");
@@ -31,6 +32,7 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
   console.log("errorHandler");
   console.log(`req.url: ${req.url}`);
+  console.log(err);
   // res.status(500).render("404");
 });
 

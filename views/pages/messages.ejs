@@ -13,7 +13,7 @@
       <% if (messages.length > 0 ) { %>
         <ul>
           <% messages.forEach((message) => { %>
-            <%- include('../partials/message', { ...message }) %>
+            <%- include('../partials/messagePreview', { message }) %>
           <% }); %>
         </ul>
       <% } else { %>

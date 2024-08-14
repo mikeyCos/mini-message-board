@@ -2,14 +2,16 @@ import asyncHandler from "express-async-handler";
 
 const messages = [
   {
-    text: "Hi there!",
+    title: "Hi there!",
+    body: "Integer molestie nisi ac purus finibus, non dapibus lectus fringilla. Aliquam hendrerit consequat commodo. Cras varius interdum nisl eget mattis.",
     user: "Amando",
-    added: new Date(),
+    timestamp: new Date(),
   },
   {
-    text: "Hello World!",
+    title: "Hello World!",
+    body: "Sed eget tempus elit, quis ultricies justo. Aenean pharetra tempor turpis, a egestas nisl pharetra et.",
     user: "Charles",
-    added: new Date(),
+    timestamp: new Date(),
   },
 ];
 
@@ -17,9 +19,18 @@ const messagesController = {
   getAllMessages: asyncHandler((req, res) => {
     console.log("messageController...");
     res.render("messages", {
-      messages,
       title: "Messages",
+      messages,
       clickHandler: "messageDetails",
+    });
+  }),
+  getMessage: asyncHandler((req, res) => {
+    console.log("messageController.getMessage");
+    console.log("req.params:", req.params);
+    console.log("req.url:", req.url);
+    res.render("messageDetails", {
+      title: "Message Details",
+      message: { ...req.params },
     });
   }),
 };
