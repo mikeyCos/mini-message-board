@@ -1,7 +1,17 @@
 # Changelog
 ---
+### 14 AUG 2024
+- Deployed application using `Fly.io`.
+- The `messagesController` object no longer passes in a `clickHandler` property in the rendering options.
+- The `messages.ejs` no longer includes a script tag.
+- Removed `messageDetails` from `utils` subdirectory.
+- Changed the 'open' message details button element to an anchor element.
+---
 ### 13 AUG 2024
-- 
+- Message objects now have a `title` property and changed `text` property to `body`.
+- The 'logo' heading `position: absolute` when the screen size is at least `481px` wide.
+- Created `messageDetails` and `messagePreview` modules.
+- Implemented a button that will trigger a `GET` request to `/messages/message/<user>/<title>/<body>/<newTimestamp>` by assigning `window.location` a new URL.
 ---
 ### 12 AUG 2024
 - Created `messageDetails` module; currently, only logs a message object.

@@ -17,17 +17,12 @@ const messages = [
 
 const messagesController = {
   getAllMessages: asyncHandler((req, res) => {
-    console.log("messageController...");
     res.render("messages", {
       title: "Messages",
       messages,
-      clickHandler: "messageDetails",
     });
   }),
   getMessage: asyncHandler((req, res) => {
-    console.log("messageController.getMessage");
-    console.log("req.params:", req.params);
-    console.log("req.url:", req.url);
     res.render("messageDetails", {
       title: "Message Details",
       message: { ...req.params },

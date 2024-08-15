@@ -24,16 +24,12 @@ app.use("/messages", messagesRouter);
 // app.use("/message", messageRouter);
 
 app.use((req, res) => {
-  console.log("404 page rendering");
-  console.log(`req.url: ${req.url}`);
-  res.render("404");
+  res.render("404", { title: "404 - Page Not Found" });
 });
 
+// Error middleware function
 app.use((err, req, res, next) => {
-  console.log("errorHandler");
-  console.log(`req.url: ${req.url}`);
-  console.log(err);
-  // res.status(500).render("404");
+  res.status(500).render("404", { title: "404 - Page Not Found" });
 });
 
 app.listen(port, () => console.log(`App running on port ${port}`));
