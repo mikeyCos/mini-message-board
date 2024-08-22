@@ -6,8 +6,8 @@
   </div>
 
   <div class="message-info">
-    <p class="message-user">
-      By: <span><%= user %></span>
+    <p class="message-username">
+      By: <span><%= username %></span>
     </p>
     
     <p class="message-date">
@@ -19,14 +19,10 @@
   <div class="message-controls">
     <ul>
       <li>
-        <a href='/messages/message/<%= user %>/<%= title %>/<%= body %>/<%= timestamp %>'><img src="/assets/icons/open_in_full.svg" alt="#" onload="SVGInject(this)"></a>
+        <a href='/messages/<%= username%>/<%= id %>'><img src="/assets/icons/open_in_full.svg" alt="#" onload="SVGInject(this)"></a>
       </li>
     </ul>
 
-    <% /* %>
-    <button type="button" onclick="<%= clickHandler %>(<%= JSON.stringify(message) %>)"><img src="/assets/icons/open_in_full.svg" alt="#" onload="SVGInject(this)"></button>
-    <button type="button" onclick="<%= clickHandler %>(<%= JSON.stringify(message) %>)"><img src="/assets/icons/open_in_full.svg" alt="#" onload="SVGInject(this)"></button>
-    <button type="button" onclick="<%= clickHandler %>({ title: '<%= message.title %>', body: '<%= message.body %>', user: '<%= message.user %>', timestamp: '<%= message.timestamp %>'})"><img src="/assets/icons/open_in_full.svg" alt="#" onload="SVGInject(this)"></button>
-    <% */ %>
+
   </div>
 </li>

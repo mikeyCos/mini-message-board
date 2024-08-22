@@ -12,7 +12,7 @@
       <% if (messages.length > 0 ) { %>
         <ul>
           <% messages.forEach((message) => { %>
-            <%- include('../partials/messagePreview', { ...message }) %>
+            <%- include('../partials/messagePreview.ejs', { ...message }) %>
           <% }); %>
         </ul>
       <% } else { %>

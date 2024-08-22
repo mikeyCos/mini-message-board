@@ -5,9 +5,6 @@ const messagesRouter = express.Router();
 
 messagesRouter.get("/", messagesController.getAllMessages);
 
-messagesRouter.get(
-  "/message/:user/:title/:body/:timestamp",
-  messagesController.getMessage
-);
+messagesRouter.get("/:username/:messageid", messagesController.getMessage);
 
 export default messagesRouter;

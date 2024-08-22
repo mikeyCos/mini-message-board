@@ -1,5 +1,11 @@
 # Changelog
 ---
+### 21 AUG 2024
+- New messages can be created by locally connecting to the `messages` database.
+- Created a `messages` database using `Neon`.
+- Installed `pg` to dependencies.
+- Created `db` subdirectory, and `environment` module in `utils` subdirectory.
+---
 ### 14 AUG 2024
 - Deployed application using `Fly.io`.
 - The `messagesController` object no longer passes in a `clickHandler` property in the rendering options.

@@ -1,8 +1,11 @@
+<% if (locals.errors) { %>
+  <p>Test again</p>
+<% } %>
 <form  method="POST" action="/new" class="new-message-form">
   <ul>
     <li class="form-item">
-      <label for="user">Username:</label>
-      <input name="user" id="user" type="text" value="Anonymous" placeholder="Anonymous" pattern="^[a-zA-z]{2,}$" required>
+      <label for="username">Username:</label>
+      <input name="username" id="username" type="text" value="Anonymous" placeholder="Anonymous" pattern="^[a-zA-z]{2,20}$" required>
     </li>
 
     <li class="form-item">

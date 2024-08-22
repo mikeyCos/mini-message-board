@@ -1,33 +1,28 @@
 import asyncHandler from "express-async-handler";
+import queries from "../db/queries.js";
 
-const messages = [
-  {
-    title: "Hi there!",
-    body: "Integer molestie nisi ac purus finibus, non dapibus lectus fringilla. Aliquam hendrerit consequat commodo. Cras varius interdum nisl eget mattis.",
-    user: "Amando",
-    timestamp: new Date(),
-  },
-  {
-    title: "Hello World!",
-    body: "Sed eget tempus elit, quis ultricies justo. Aenean pharetra tempor turpis, a egestas nisl pharetra et.",
-    user: "Charles",
-    timestamp: new Date(),
-  },
-];
+const { getAllMessages, getMessage } = queries;
+let count = 0;
 
 const messagesController = {
-  getAllMessages: asyncHandler((req, res) => {
+  getAllMessages: asyncHandler(async (req, res) => {
+    // Get all rows from messages table
+    const messages = await getAllMessages();
     res.render("messages", {
       title: "Messages",
       messages,
     });
   }),
-  getMessage: asyncHandler((req, res) => {
+  getMessage: asyncHandler(async (req, res) => {
+    // Get message row based on req.params
+    const { messageid } = req.params;
+    const message = await getMessage(messageid);
+
     res.render("messageDetails", {
       title: "Message Details",
-      message: { ...req.params },
+      message,
     });
   }),
 };
 
-export { messagesController as default, messages };
+export { messagesController as default };

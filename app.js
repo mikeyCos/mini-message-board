@@ -1,27 +1,26 @@
 import express from "express";
-import dotenv from "dotenv";
-
 import { staticPaths, viewsPaths } from "./paths/paths.js";
 import homeRouter from "./routes/homeRouter.js";
 import newRouter from "./routes/newRouter.js";
 import messagesRouter from "./routes/messagesRouter.js";
+import env from "./utils/environment.js";
 
-dotenv.config();
-
-const port = process.env.PORT || 3000;
+const { port } = env;
 const app = express();
 
+// Specifying static paths
 app.use(staticPaths.map((path) => express.static(path)));
 
+// Setting views
 app.set("views", viewsPaths);
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 
+// Specifying routes
 app.use("/", homeRouter);
 app.use("/new", newRouter);
 app.use("/messages", messagesRouter);
-// app.use("/message", messageRouter);
 
 app.use((req, res) => {
   res.render("404", { title: "404 - Page Not Found" });
