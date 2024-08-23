@@ -2,15 +2,7 @@ import pg from "pg";
 import env from "../utils/environment.js";
 
 const { Client } = pg;
-const { PGDATABASE, PGUSER, PGPASSWORD, PGHOST } = env;
-
-/*
- * id
- * title
- * body
- * date
- *
- */
+const { PGDATABASE, PGUSER, PGPASSWORD, PGHOST, DATABASE_URL } = env;
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
@@ -28,10 +20,7 @@ VALUES ('Tom', 'Foo', 'Foo body text'),
 
 const initDB = async () => {
   const client = new Client({
-    host: PGHOST,
-    user: PGUSER,
-    password: PGPASSWORD,
-    port: 5432,
+    connectionString: DATABASE_URL,
     ssl: {
       require: true,
     },

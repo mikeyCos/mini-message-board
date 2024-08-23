@@ -1,5 +1,10 @@
 # Changelog
 ---
+### 22 AUG 2024
+- Commit before `fly deploy`.
+- The `initdb` and `pool` modules now use a `connectionString`.
+- The `environment` module only sets `port` and `DATABASE_URL` object properties.
+---
 ### 21 AUG 2024
 - New messages can be created by locally connecting to the `messages` database.
 - Created a `messages` database using `Neon`.
